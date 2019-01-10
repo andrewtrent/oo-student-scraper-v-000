@@ -28,6 +28,7 @@ class Student
   end
 
   def self.all
+    # saving function
     @@all
   end
 end
