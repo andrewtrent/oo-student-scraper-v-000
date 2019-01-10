@@ -5,19 +5,23 @@ class Student
   @@all = []
 
   def initialize(student_hash)
+    # mass assign attributes from hash
     student_hash.each do |key, value|
       self.send("#{key}=", value)
     end
+    # save new Student instances to @@all array
     @@all << self
   end
 
   def self.create_from_collection(students_array)
+    # iterate through students array and instance Students
     students_array.each do |hsh|
       self.new(hsh)
     end
   end
 
   def add_student_attributes(attributes_hash)
+    # allow Student object to iterate over a hash of new attributes
       attributes_hash.each do |key, value|
         self.send("#{key}=", value)
       end
