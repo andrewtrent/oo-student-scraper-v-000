@@ -13,8 +13,8 @@ class Student
   end
 
   def self.create_from_collection(students_array)
-    students_array.each do |hsh|
-      self.new(Scraper.scrape_index_page("fixtures/student-site/index.html"))
+    Scraper.scrape_index_page("fixtures/student-site/index.html").each do |hsh|
+      self.new(hsh)
     end
   end
 
