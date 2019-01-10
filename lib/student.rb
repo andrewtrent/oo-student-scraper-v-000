@@ -9,11 +9,10 @@ class Student
       self.send("#{key}=", value)
     end
     @@all << self
-    binding.pry
   end
 
   def self.create_from_collection(students_array)
-    Scraper.scrape_index_page("fixtures/student-site/index.html").each do |hsh|
+    students_array.each do |hsh|
       self.new(hsh)
     end
   end
